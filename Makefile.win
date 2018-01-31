@@ -1,0 +1,60 @@
+# Project: myGym v.1.0
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o persona.o cliente.o trainer.o nota.o consigliosettimanale.o scheda.o listaesercizio.o esercizio.o palestra.o funzioni.o $(RES)
+LINKOBJ  = main.o persona.o cliente.o trainer.o nota.o consigliosettimanale.o scheda.o listaesercizio.o esercizio.o palestra.o funzioni.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = myGym.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before myGym.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "myGym.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+persona.o: persona.cpp
+	$(CPP) -c persona.cpp -o persona.o $(CXXFLAGS)
+
+cliente.o: cliente.cpp
+	$(CPP) -c cliente.cpp -o cliente.o $(CXXFLAGS)
+
+trainer.o: trainer.cpp
+	$(CPP) -c trainer.cpp -o trainer.o $(CXXFLAGS)
+
+nota.o: nota.cpp
+	$(CPP) -c nota.cpp -o nota.o $(CXXFLAGS)
+
+consigliosettimanale.o: consigliosettimanale.cpp
+	$(CPP) -c consigliosettimanale.cpp -o consigliosettimanale.o $(CXXFLAGS)
+
+scheda.o: scheda.cpp
+	$(CPP) -c scheda.cpp -o scheda.o $(CXXFLAGS)
+
+listaesercizio.o: listaesercizio.cpp
+	$(CPP) -c listaesercizio.cpp -o listaesercizio.o $(CXXFLAGS)
+
+esercizio.o: esercizio.cpp
+	$(CPP) -c esercizio.cpp -o esercizio.o $(CXXFLAGS)
+
+palestra.o: palestra.cpp
+	$(CPP) -c palestra.cpp -o palestra.o $(CXXFLAGS)
+
+funzioni.o: funzioni.cpp
+	$(CPP) -c funzioni.cpp -o funzioni.o $(CXXFLAGS)
